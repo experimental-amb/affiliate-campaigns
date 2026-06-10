@@ -1,6 +1,7 @@
 {
   "version": 2,
   "routes": [
+    { "src": "/", "dest": "/index.html" },
     { "src": "/noocube", "dest": "/noocube/index.html" },
     { "src": "/noocube/optin", "dest": "/noocube/optin.html" },
     { "src": "/noocube/webinar", "dest": "/noocube/webinar.html" }

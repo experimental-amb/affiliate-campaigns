@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Affiliate Campaigns — Hub</title>
+  <style>
+    :root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #f1f5f9; --muted: #94a3b8; --primary: #3b82f6; --success: #10b981; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; padding: 48px 20px; }
+    .container { max-width: 860px; margin: 0 auto; }
+    header { margin-bottom: 48px; }
+    header h1 { font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+    header p { color: var(--muted); font-size: 15px; }
+    .campaign-grid { display: grid; gap: 16px; }
+    .campaign-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .campaign-card:hover { border-color: var(--primary); }
+    .campaign-info h2 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+    .campaign-info p { font-size: 13px; color: var(--muted); }
+    .campaign-badge {
+      display: inline-block;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid var(--success);
+      color: var(--success);
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    .campaign-links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .link-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--bg);
+    }
+    .link-btn.primary { background: var(--primary); border-color: var(--primary); color: white; }
+    .link-btn:hover { opacity: 0.85; }
+    .stats { display: flex; gap: 32px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: 26px; font-weight: 900; color: var(--text); }
+    .stat span { font-size: 12px; color: var(--muted); }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🚀 Affiliate Campaigns</h1>
+    <p>Hub de campañas activas — experimental-amb · <span id="date"></span></p>
+  </header>
+
+  <div class="campaign-grid">
+
+    <!-- CAMPAÑA: NooCube -->
+    <div class="campaign-card">
+      <div class="campaign-info">
+        <h2>🧠 NooCube Brain Productivity v3.0</h2>
+        <p>Biohacking para Ejecutivos en Español · FanFuel / Wolfson Brands · hasta 60% comisión</p>
+        <span class="campaign-badge">● ACTIVA</span>
+      </div>
+      <div class="campaign-links">
+        <a href="/noocube" class="link-btn primary">Landing →</a>
+        <a href="/noocube/optin" class="link-btn">Opt-in</a>
+        <a href="/noocube/webinar" class="link-btn">Webinar</a>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER: Próxima campaña -->
+    <div class="campaign-card" style="opacity:0.4; pointer-events:none;">
+      <div class="campaign-info">
+        <h2>➕ Nueva campaña</h2>
+        <p>Agrega una carpeta al repo y haz push — aparece aquí automáticamente.</p>
+      </div>
+      <div class="campaign-links">
+        <span class="link-btn">Pendiente</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat"><strong>1</strong><span>Campañas activas</span></div>
+    <div class="stat"><strong>3</strong><span>Páginas desplegadas</span></div>
+    <div class="stat"><strong>60%</strong><span>Comisión máx. activa</span></div>
+  </div>
+
+  <footer>
+    Uso interno · No indexado · affiliate-campaigns monorepo
+  </footer>
+</div>
+<script>
+  document.getElementById('date').textContent = new Date().toLocaleDateString('es-MX', { year:'numeric', month:'long', day:'numeric' });
+</script>
+</body>
+</html>

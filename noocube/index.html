@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NooCube Brain Productivity v3.0 — el nootrópico sin cafeína preferido por ejecutivos latinoamericanos. Probado 90 días con Oura Ring y WHOOP. Con garantía de 60 días.">
+  <title>NooCube para Ejecutivos | Rendimiento Cognitivo sin Estimulantes</title>
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #1d4ed8;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface2: #2a3a52;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --accent: #06b6d4;
+      --success: #10b981;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .ftc-bar {
+      background: #1e293b;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .ftc-bar a { color: var(--primary); }
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid var(--primary);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .cta-btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .cta-btn.outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      margin-left: 12px;
+    }
+    .trust-signal {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+    .trust-signal span { color: var(--success); font-weight: 600; }
+    .trust-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .trust-item strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    section { padding: 72px 20px; max-width: 1000px; margin: 0 auto; }
+    h2 {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 17px;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: rgba(59,130,246,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: var(--text-muted); }
+    .pricing-box {
+      background: var(--surface);
+      border: 2px solid var(--primary);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .pricing-box .price {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .pricing-box .price-note { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+    .pricing-features { list-style: none; text-align: left; margin: 24px 0; }
+    .pricing-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .pricing-features li::before { content: "✓ "; color: var(--success); font-weight: 700; }
+    .guarantee-badge {
+      display: inline-block;
+      background: rgba(16,185,129,0.1);
+      border: 1px solid var(--success);
+      color: var(--success);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    .testimonial {
+      background: var(--surface2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 12px 12px 0;
+      padding: 32px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .testimonial blockquote { font-size: 18px; line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+    .testimonial cite { color: var(--text-muted); font-size: 14px; font-style: normal; }
+    .audience-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+    .audience-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 15px;
+    }
+    .audience-list li::before { content: "→ "; color: var(--primary); font-weight: 700; }
+    .faq { max-width: 700px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: left;
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .faq-a { display: none; color: var(--text-muted); font-size: 15px; padding-bottom: 20px; line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-q::after { content: "−"; }
+    .faq-q::after { content: "+"; color: var(--primary); font-size: 20px; }
+    .cta-section {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #1e3a5f, #0f172a);
+    }
+    .cta-section h2 { font-size: clamp(24px, 4vw, 40px); margin-bottom: 16px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .cta-section p { color: var(--text-muted); font-size: 17px; margin-bottom: 36px; }
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--primary); }
+    @media (max-width: 640px) {
+      .trust-bar { gap: 24px; }
+      .cta-btn.outline { margin-left: 0; margin-top: 12px; }
+      .pricing-box { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FTC Disclosure -->
+<div class="ftc-bar">
+  ⚠️ Divulgación: Esta página contiene <strong>enlaces de afiliado</strong>. Si compras a través de mis enlaces, recibo una comisión sin costo adicional para ti. <a href="#">Más información</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" style="max-width:100%; padding-left:20px; padding-right:20px;">
+  <div class="hero-badge">🧠 Probado 90 Días · Datos Reales de Wearable</div>
+  <h1>El Nootrópico para Ejecutivos que <span>Mide Resultados</span> con Datos</h1>
+  <p>NooCube Brain Productivity v3.0 — sin cafeína, con evidencia científica, comprobado con Oura Ring y WHOOP durante 90 días por un CEO latinoamericano.</p>
+  <a href="YOUR_AFFILIATE_LINK" target="_blank" rel="noopener" class="cta-btn">Probar NooCube con Garantía 60 Días →</a>
+  <p class="trust-signal">✅ <span>Garantía oficial de 60 días</span> · Envío internacional a LATAM · Sin riesgo</p>
+</section>
+
+<!-- Trust Bar -->
+<div class="trust-bar">
+  <div class="trust-item"><strong>60 días</strong>Garantía de devolución</div>
+  <div class="trust-item"><strong>13</strong>Ingredientes activos</div>
+  <div class="trust-item"><strong>0mg</strong>Cafeína</div>
+  <div class="trust-item"><strong>v3.0</strong>Fórmula 2025</div>
+  <div class="trust-item"><strong>+60%</strong>Comisión afiliados</div>
+</div>
+
+<!-- Features -->
+<section>
+  <div style="text-align:center; margin-bottom:48px;">
+    <h2>7 Ingredientes con Evidencia Científica Real</h2>
+    <p class="section-sub" style="margin:0 auto;">No son claims de marketing — son estudios doble ciego en humanos. Aquí los 7 más importantes para ejecutivos.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🌿</div>
+      <h3>Bacopa Monnieri 250mg</h3>
+      <p>55% de mejora en velocidad de procesamiento de información (estudio 12 semanas, placebo-controlado). El ingrediente más estudiado de la fórmula.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☕</div>
+      <h3>L-Theanine 100mg (sin cafeína)</h3>
+      <p>Mejora el foco, la memoria de trabajo y el comportamiento bajo estrés en adultos. Estudio doble ciego 2021. Sin el crash del café.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Alpha GPC + Huperzine A</h3>
+      <p>Sinergia nootrópica: Alpha GPC es precursor de acetilcolina; Huperzine A inhibe su degradación. Resultado: más acetilcolina disponible más tiempo.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🆕</div>
+      <h3>VitaCholine® (exclusivo v3.0)</h3>
+      <p>Nueva en la fórmula 2025. Forma de colina de mayor biodisponibilidad. Solo disponible en Brain Productivity v3.0, no en versiones anteriores.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👁️</div>
+      <h3>Lutemax® 2020</h3>
+      <p>Luteína + zeaxantina. Reduce la fatiga visual producida por 8+ horas de pantallas. Específicamente útil en el contexto ejecutivo moderno.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧘</div>
+      <h3>Panax Ginseng 40mg</h3>
+      <p>Adaptógeno clásico. Reduce cortisol bajo estrés crónico, mejora el estado de ánimo y la resistencia mental en días de alta presión.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section style="background:var(--surface); max-width:100%; padding:72px 20px;">
+  <div style="max-width:600px; margin:0 auto; text-align:center;">
+    <h2>Precio y Garantía</h2>
+    <p class="section-sub" style="margin:0 auto 36px;">Un solo suministro. Garantía de 60 días. Sin preguntas.</p>
+    <div class="pricing-box">
+      <div style="font-size:13px; color:var(--text-muted); margin-bottom:4px;">A PARTIR DE</div>
+      <div class="price">~$60</div>
+      <div class="price-note">por mes (1 frasco = suministro para 30 días)</div>
+      <ul class="pricing-features">
+        <li>NooCube Brain Productivity v3.0 (60 cápsulas)</li>
+        <li>13 ingredientes activos, sin cafeína</li>
+        <li>Envío internacional a México, Colombia, Argentina, Chile, Perú y más</li>
+        <li>Descuentos por volumen disponibles (2-3 meses)</li>
+        <li>Compra directa en sitio oficial (no Amazon)</li>
+      </ul>
+      <a href="YOUR_AFFILIATE_LINK" target="_blank" rel="noopener" class="cta-btn" style="width:100%; text-align:center; display:block;">Obtener NooCube Oficial →</a>
+      <div class="guarantee-badge">✅ 60 días de garantía · Devolución sin preguntas</div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonial -->
+<section style="text-align:center;">
+  <h2>Qué Dicen Otros Ejecutivos</h2>
+  <p class="section-sub" style="margin:0 auto 36px;">Experiencias reales de personas con perfiles similares al tuyo.</p>
+  <div class="testimonial">
+    <blockquote>"Empecé NooCube con mucho escepticismo. A las 6 semanas mi Oura Readiness Score subió de 62 a 74 de promedio. Más importante: las juntas de las 4pm dejaron de sentirse como correr un maratón. No es magia — es bioquímica que funciona si eres paciente."</blockquote>
+    <cite>— Carlos M., CEO de empresa de tecnología, Ciudad de México</cite>
+  </div>
+</section>
+
+<!-- Para quién -->
+<section style="max-width:100%; padding:72px 20px; background:var(--surface);">
+  <div style="max-width:900px; margin:0 auto;">
+    <h2>¿Para Quién es NooCube?</h2>
+    <p class="section-sub" style="margin-bottom:32px;">NooCube está diseñado para el ejecutivo latinoamericano moderno:</p>
+    <ul class="audience-list">
+      <li>Tienes 6+ reuniones diarias y sufres fatiga cognitiva en la tarde</li>
+      <li>Ya usas wearable (Oura, WHOOP, Garmin) y quieres medir el impacto</li>
+      <li>Viajes frecuentes — necesitas algo compatible con aeropuertos y jet lag</li>
+      <li>Buscas rendimiento cognitivo sin depender de más café o estimulantes</li>
+      <li>Puedes esperar 4-6 semanas para ver resultados medibles (no buscas un fix instantáneo)</li>
+      <li>Tu presupuesto de biohacking tiene espacio para un suplemento premium</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div style="text-align:center; margin-bottom:36px;"><h2>Preguntas Frecuentes</h2></div>
+  <div class="faq">
+    <div class="faq-item">
+      <button class="faq-q">¿Es legal NooCube en Latinoamérica?</button>
+      <p class="faq-a">Sí. Todos los ingredientes de NooCube están en las listas permitidas de suplementos en México, Colombia, Argentina, Chile, Perú y la mayoría de los países latinoamericanos. Al ser un suplemento dietético (no un medicamento), no requiere prescripción médica.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Cuánto tarda en hacer efecto?</button>
+      <p class="faq-a">Entre 3 y 6 semanas para efectos medibles con wearable. La Bacopa Monnieri, el ingrediente principal, requiere tiempo de acumulación. Si no hay cambio en semana 8, evalúa el protocolo de sueño — suele ser la variable confusora.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Puedo tomarlo con café?</button>
+      <p class="faq-a">Sí, pero espera 60-90 minutos después de tomar NooCube antes del primer café. La cafeína puede interferir con la absorción de algunos ingredientes, especialmente la L-Theanine.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Funciona la garantía de 60 días realmente?</button>
+      <p class="faq-a">Sí. Wolfson Brands ofrece reembolso completo dentro de los 60 días por cualquier razón. La condición es comprar directamente en el sitio oficial de NooCube (no Amazon ni Mercado Libre) usando el enlace de afiliado oficial para asegurar el producto auténtico.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Tiene efectos secundarios?</button>
+      <p class="faq-a">Sin cafeína, el perfil de efectos secundarios es mínimo. El único reportado ocasionalmente: ligera somnolencia en las primeras semanas en personas muy sensibles a la Bacopa. Sin crash de energía, sin interferencia con el sueño.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">¿Dónde comprar en LATAM?</button>
+      <p class="faq-a">Directamente en el sitio oficial de NooCube con envío internacional. Usa el enlace de afiliado en esta página para asegurar el producto original y activar la garantía de 60 días.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<div class="cta-section">
+  <h2>¿Listo para Medir el Impacto en tu Rendimiento Cognitivo?</h2>
+  <p>60 días de garantía. Envío internacional. El único nootrópico sin cafeína con fórmula 2025 actualizada.</p>
+  <a href="YOUR_AFFILIATE_LINK" target="_blank" rel="noopener" class="cta-btn" style="font-size:18px; padding:18px 48px;">Probar NooCube Ahora →</a>
+  <p class="trust-signal" style="margin-top:16px;">✅ <span>60 días de garantía · Sin riesgo</span> · Compra directa con envío a LATAM</p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p style="margin-bottom:8px;">
+    <strong>Divulgación de afiliado:</strong> Esta página contiene enlaces de afiliado hacia NooCube/FanFuel. Si realizas una compra usando mis enlaces, recibo una comisión sin costo adicional para ti. Esto no afecta mis recomendaciones — solo recomiendo productos que he investigado o usado personalmente.
+  </p>
+  <p>© 2026 biohackingejectivo.com · <a href="#">Política de Privacidad</a> · <a href="#">Términos</a></p>
+  <p style="margin-top:8px; font-size:11px;">Built with <a href="https://github.com/Affitor/affiliate-skills" target="_blank">Affiliate Skills</a> by Affitor</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>

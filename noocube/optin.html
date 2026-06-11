@@ -1,127 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <meta name="description" content="Descarga gratis los 7 protocolos de biohacking para ejecutivos latinos — sin suplementos obligatorios.">
-  <title>Kit de Biohacking del Ejecutivo Latino — Descarga Gratuita</title>
+  <title>Kit de Biohacking // Descarga Gratuita</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    :root {
-      --primary: #6366f1; --primary-glow: rgba(99,102,241,0.4);
-      --cyan: #06b6d4; --green: #10b981;
-      --bg: #020817; --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08); --border-bright: rgba(99,102,241,0.35);
-      --text: #f8fafc; --text-muted: #94a3b8; --text-dim: #64748b;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; position: relative; z-index: 1; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.6;
-      min-height: 100vh; overflow-x: hidden;
-      display: flex; flex-direction: column;
-    }
-    body::before {
-      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% -10%, rgba(99,102,241,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 10% 60%, rgba(6,182,212,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 50% at 90% 80%, rgba(99,102,241,0.06) 0%, transparent 50%);
-    }
-    /* FTC */
-    .ftc { text-align: center; padding: 10px 20px; font-size: 12px; color: var(--text-dim); border-bottom: 1px solid var(--border); }
-    .ftc a { color: var(--primary); text-decoration: none; }
-    /* MAIN */
-    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; }
-    .card {
-      width: 100%; max-width: 540px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-bright);
-      border-radius: 24px;
-      padding: 56px 48px;
-      box-shadow: 0 0 100px rgba(99,102,241,0.08), inset 0 1px 0 rgba(255,255,255,0.05);
-    }
-    /* eyebrow */
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--surface); border: 1px solid var(--border);
-      color: var(--cyan); padding: 5px 14px; border-radius: 100px;
-      font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; box-shadow: 0 0 6px var(--green); }
-    /* title */
-    h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
-    .grad { background: linear-gradient(135deg, #6366f1, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .subtitle { font-size: 16px; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px; }
-    /* what's inside */
-    .contents { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
-    .contents-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--primary); margin-bottom: 12px; }
-    .protocol-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .protocol-list li { font-size: 14px; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px; line-height: 1.4; }
-    .protocol-list li::before { content: ''; width: 16px; height: 16px; min-width: 16px; margin-top: 1px; border-radius: 4px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.25); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 5l2.5 2.5 4.5-4' stroke='%2310b981' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-    /* form */
-    form { display: flex; flex-direction: column; gap: 14px; }
-    input[type="text"], input[type="email"] {
-      width: 100%; padding: 14px 18px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      border-radius: 10px; color: var(--text);
-      font-size: 15px; font-family: inherit;
-      outline: none; transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    input::placeholder { color: var(--text-dim); }
-    input:focus { border-color: rgba(99,102,241,0.5); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
-    .btn-submit {
-      width: 100%; padding: 16px;
-      background: linear-gradient(135deg, var(--primary), #4f46e5);
-      color: white; border: none; border-radius: 10px;
-      font-size: 16px; font-weight: 700; font-family: inherit;
-      cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;
-      box-shadow: 0 0 40px var(--primary-glow), inset 0 1px 0 rgba(255,255,255,0.1);
-      transition: all 0.2s;
-    }
-    .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 0 60px var(--primary-glow); }
-    .form-note { font-size: 12px; color: var(--text-dim); text-align: center; line-height: 1.5; }
-    .form-note span { color: var(--green); }
-    /* success state */
-    .success { display: none; text-align: center; padding: 20px 0; }
-    .success-icon { font-size: 48px; margin-bottom: 16px; }
-    .success h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-    .success p { font-size: 15px; color: var(--text-muted); }
-    /* footer */
-    footer { text-align: center; padding: 24px 20px; font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); }
-    footer a { color: var(--primary); text-decoration: none; }
-    @media(max-width:600px){
-      .card { padding: 36px 24px; }
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;700;900&display=swap');
+    :root{--bg:#080812;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--cyan:#00d4ff;--pink:#ff2d9b;--green:#00e5a0;--text:#fff;--muted:#94a3b8;--dim:#4a5568}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 50% -5%,rgba(0,212,255,0.12),transparent 60%),radial-gradient(ellipse 40% 40% at 10% 80%,rgba(255,45,155,0.06),transparent 50%)}
+    canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.15}
+    .ftc{position:relative;z-index:10;text-align:center;padding:8px 20px;font-size:11px;color:var(--dim);letter-spacing:0.5px;border-bottom:1px solid var(--border);background:rgba(8,8,18,0.9);font-family:'Inter',sans-serif}
+    .ftc a{color:var(--cyan);text-decoration:none}
+    main{flex:1;display:flex;align-items:center;justify-content:center;padding:60px 20px;position:relative;z-index:1}
+    .card{width:100%;max-width:560px;background:rgba(255,255,255,0.03);border:1px solid rgba(0,212,255,0.2);border-radius:24px;padding:56px 48px;box-shadow:0 0 100px rgba(0,212,255,0.06),inset 0 1px 0 rgba(255,255,255,0.04)}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);color:var(--cyan);padding:5px 16px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:28px;font-family:'Inter',sans-serif}
+    .eyebrow::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green);animation:blink 2s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+    h1{font-size:clamp(28px,4vw,38px);font-weight:900;letter-spacing:-1.5px;line-height:1.05;margin-bottom:16px}
+    .grad{background:linear-gradient(90deg,var(--cyan),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .sub{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:28px;font-family:'Inter',sans-serif}
+    .contents{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:28px}
+    .ctitle{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--cyan);margin-bottom:14px;font-family:'Inter',sans-serif}
+    .plist{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .plist li{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.5;font-family:'Inter',sans-serif}
+    .plist li::before{content:'';width:16px;height:16px;min-width:16px;margin-top:1px;border-radius:4px;background:rgba(0,229,160,0.1);border:1px solid rgba(0,229,160,0.2);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 5l2.5 2.5 4.5-4' stroke='%2300e5a0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center}
+    form{display:flex;flex-direction:column;gap:12px}
+    input[type=text],input[type=email]{width:100%;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+    input::placeholder{color:var(--dim)}
+    input:focus{border-color:rgba(0,212,255,0.4);box-shadow:0 0 0 3px rgba(0,212,255,0.08)}
+    .btn-submit{width:100%;padding:16px;background:#fff;color:#080812;border:none;border-radius:100px;font-size:15px;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s}
+    .btn-submit:hover{background:var(--cyan);transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,212,255,0.2)}
+    .form-note{font-size:11px;color:var(--dim);text-align:center;line-height:1.5;font-family:'Inter',sans-serif;letter-spacing:0.3px}
+    .form-note span{color:var(--green)}
+    .success{display:none;text-align:center;padding:20px 0}
+    .success-icon{font-size:52px;margin-bottom:16px}
+    .success h2{font-size:24px;font-weight:900;margin-bottom:8px}
+    .success p{font-size:14px;color:var(--muted);font-family:'Inter',sans-serif}
+    footer{position:relative;z-index:1;text-align:center;padding:24px 20px;font-size:11px;color:var(--dim);border-top:1px solid var(--border);font-family:'Inter',sans-serif}
+    footer a{color:var(--cyan);text-decoration:none}
+    @media(max-width:600px){.card{padding:36px 24px}}
   </style>
 </head>
 <body>
-
-<div class="ftc">Divulgación: Página de descarga gratuita. Después recibirás info sobre NooCube — puedes darte de baja cuando quieras. <a href="#">Política de privacidad</a></div>
-
+<canvas id="c"></canvas>
+<div class="ftc">Descarga gratuita. Recibirás info sobre NooCube — baja cuando quieras. <a href="#">Privacidad</a></div>
 <main>
   <div class="card">
-    <div class="eyebrow">Descarga gratuita · PDF + Guía práctica</div>
-
+    <div class="eyebrow">FREE DOWNLOAD // PDF + GUIDE</div>
     <h1>Kit de Biohacking<br>del <span class="grad">Ejecutivo Latino</span></h1>
-    <p class="subtitle">7 protocolos documentados para mejorar tu rendimiento cognitivo — sin suplementos obligatorios, sin pseudociencia.</p>
-
+    <p class="sub">7 protocolos documentados para mejorar tu rendimiento cognitivo — sin pseudociencia, sin suplementos obligatorios.</p>
     <div class="contents">
-      <div class="contents-title">Lo que incluye el kit</div>
-      <ul class="protocol-list">
+      <div class="ctitle">PROTOCOLS // v1.0</div>
+      <ul class="plist">
         <li>Protocolo de sueño profundo para CEOs con agenda caótica</li>
         <li>Stack de nootrópicos validados con wearable (y qué evitar)</li>
         <li>Optimización de cortisol matutino — rutina de 15 min</li>
         <li>Cómo medir HRV y qué hacer con los datos</li>
-        <li>Nutrición cognitiva: los 5 alimentos que sí mueven el marcador</li>
-        <li>Protocolo de zona 2 para ejecutivos sin tiempo de ir al gym</li>
+        <li>Nutrición cognitiva: los 5 alimentos que mueven el marcador</li>
+        <li>Protocolo zona 2 para ejecutivos sin tiempo de ir al gym</li>
         <li>Gestión de carga cognitiva en semanas de alta presión</li>
       </ul>
     </div>
-
     <div id="form-wrap">
       <form id="optin-form">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
@@ -132,31 +73,22 @@
         </button>
         <p class="form-note"><span>100% gratis</span> · Sin spam · Baja con un clic</p>
       </form>
-
       <div class="success" id="success-msg">
         <div class="success-icon">📥</div>
-        <h2>¡Kit enviado a tu inbox!</h2>
-        <p>Revisa tu correo. En unos segundos recibirás el kit. Si no aparece, revisa Spam.</p>
+        <h2>Kit enviado al inbox</h2>
+        <p>Revisa tu correo. En segundos recibirás el kit. Si no aparece, revisa Spam.</p>
       </div>
     </div>
   </div>
 </main>
-
-<footer>
-  © 2026 BiohackingEjecutivo.com · <a href="#">Privacidad</a> · <a href="#">Términos</a><br>
-  <span style="font-size:11px">Tus datos no se comparten con terceros. Puedes darte de baja en cualquier momento.</span>
-</footer>
-
+<footer>© 2026 BiohackingEjecutivo.com · <a href="#">Privacidad</a> · <a href="#">Términos</a></footer>
 <script>
-document.getElementById('optin-form').addEventListener('submit', function(e) {
+(function(){const c=document.getElementById('c'),ctx=c.getContext('2d');let W,H,mx=0,my=0;function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}r();window.addEventListener('resize',r);document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});const COLS=30,ROWS=20;function draw(){ctx.clearRect(0,0,W,H);const cw=W/COLS,ch=H/ROWS,ox=(mx/W-0.5)*15,oy=(my/H-0.5)*10;ctx.strokeStyle='rgba(0,212,255,0.2)';ctx.lineWidth=0.5;for(let i=0;i<=COLS;i++){ctx.beginPath();ctx.moveTo(i*cw+ox*0.3,0);ctx.lineTo(i*cw+ox*0.3,H);ctx.stroke()}for(let j=0;j<=ROWS;j++){ctx.beginPath();ctx.moveTo(0,j*ch+oy*0.3);ctx.lineTo(W,j*ch+oy*0.3);ctx.stroke()}}(function loop(){draw();requestAnimationFrame(loop)})()})();
+document.getElementById('optin-form').addEventListener('submit',function(e){
   e.preventDefault();
-  const nombre = this.nombre.value;
-  const email = this.email.value;
-  // Aquí conectar con email provider (ConvertKit, ActiveCampaign, etc.)
-  // Por ahora redirect al link de afiliado
-  document.getElementById('optin-form').style.display = 'none';
-  document.getElementById('success-msg').style.display = 'block';
-  setTimeout(() => { window.location.href = 'YOUR_AFFILIATE_LINK'; }, 2500);
+  this.style.display='none';
+  document.getElementById('success-msg').style.display='block';
+  setTimeout(()=>{window.location.href='YOUR_AFFILIATE_LINK'},2500);
 });
 </script>
 </body>

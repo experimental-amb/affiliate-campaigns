@@ -1,209 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Webinar Gratuito — Cómo Operar a tu Máximo Nivel Cognitivo en 90 Días</title>
+  <title>Webinar // Máximo Rendimiento Cognitivo en 90 Días</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-    :root {
-      --primary: #7c3aed; --primary-glow: rgba(124,58,237,0.4);
-      --violet-light: #a78bfa;
-      --cyan: #06b6d4; --green: #10b981; --orange: #f59e0b;
-      --bg: #0a0118; --surface: rgba(255,255,255,0.04);
-      --border: rgba(255,255,255,0.08); --border-bright: rgba(124,58,237,0.35);
-      --text: #f8fafc; --text-muted: #94a3b8; --text-dim: #64748b;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; position: relative; z-index: 1; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden;
-    }
-    body::before {
-      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background:
-        radial-gradient(ellipse 80% 50% at 30% -5%, rgba(124,58,237,0.2) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 50% at 20% 90%, rgba(124,58,237,0.07) 0%, transparent 50%);
-    }
-    /* URGENCY BAR */
-    .urgency-bar {
-      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2));
-      border-bottom: 1px solid var(--border-bright);
-      text-align: center; padding: 12px 20px;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.2px;
-    }
-    .urgency-bar .timer { color: var(--violet-light); font-weight: 800; font-size: 15px; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;700;900&display=swap');
+    :root{--bg:#080812;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);--cyan:#00d4ff;--pink:#ff2d9b;--violet:#a78bfa;--green:#00e5a0;--orange:#f59e0b;--text:#fff;--muted:#94a3b8;--dim:#4a5568}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Space Grotesk',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse 80% 50% at 30% -5%,rgba(167,139,250,0.15),transparent 60%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(0,212,255,0.07),transparent 50%),radial-gradient(ellipse 40% 50% at 20% 90%,rgba(255,45,155,0.06),transparent 50%)}
+    canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.15}
+
+    /* URGENCY */
+    .urgency{position:relative;z-index:10;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 20px;background:rgba(167,139,250,0.08);border-bottom:1px solid rgba(167,139,250,0.2);font-size:13px;font-weight:700;font-family:'Inter',sans-serif;letter-spacing:0.3px}
+    .urgency .timer{color:var(--violet);font-size:15px;font-weight:900;font-family:'Space Grotesk',sans-serif;letter-spacing:-0.5px}
+    .urgency .dot{width:6px;height:6px;border-radius:50%;background:#ef4444;box-shadow:0 0 8px #ef4444;animation:blink 1.5s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(8,8,18,0.85);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+    .nav-logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase}
+    .nav-logo-icon{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#000}
+    .slash{color:var(--dim);margin:0 4px}
+    .nav-cta{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:#fff;color:#080812;padding:10px 24px;border-radius:100px;text-decoration:none;transition:all 0.2s}
+    .nav-cta:hover{background:var(--violet);color:#fff;transform:scale(1.03)}
+
     /* HERO */
-    .hero { max-width: 900px; margin: 0 auto; padding: 80px 40px 60px; text-align: center; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3);
-      color: var(--violet-light); padding: 6px 16px; border-radius: 100px;
-      font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
-      margin-bottom: 28px; animation: fadeUp 0.6s ease both;
-    }
-    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 8px var(--orange); animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
-    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-    .hero h1 { font-size: clamp(30px, 5vw, 58px); font-weight: 900; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; animation: fadeUp 0.6s 0.1s ease both; }
-    .grad-v { background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both; }
-    /* DATE BADGE */
-    .date-badge {
-      display: inline-flex; align-items: center; gap: 16px;
-      background: var(--surface); border: 1px solid var(--border-bright);
-      border-radius: 12px; padding: 16px 28px; margin-bottom: 40px;
-      animation: fadeUp 0.6s 0.25s ease both;
-    }
-    .date-badge .date-block { text-align: left; }
-    .date-badge .date-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-    .date-badge .date-val { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
-    .date-badge .sep { width: 1px; height: 36px; background: var(--border); }
-    /* SPEAKER SECTION */
-    .speaker-section { max-width: 900px; margin: 0 auto; padding: 0 40px 80px; }
-    .speaker-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-      padding: 40px; display: flex; gap: 32px; align-items: center;
-    }
-    .speaker-avatar {
-      width: 100px; height: 100px; min-width: 100px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2));
-      border: 2px solid rgba(124,58,237,0.3);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 44px;
-    }
-    .speaker-name { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; }
-    .speaker-title { font-size: 14px; color: var(--violet-light); font-weight: 600; margin-bottom: 12px; }
-    .speaker-bio { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
-    .speaker-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
-    .chip { background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2); color: var(--violet-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; }
-    /* AGENDA */
-    .agenda-section { padding: 80px 40px; background: linear-gradient(180deg, transparent, rgba(124,58,237,0.04), transparent); }
-    .agenda-inner { max-width: 740px; margin: 0 auto; }
-    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
-    .section-title { font-size: clamp(26px,4vw,40px); font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
-    .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 40px; }
-    .agenda-list { display: flex; flex-direction: column; gap: 0; }
-    .agenda-item {
-      display: flex; gap: 20px; align-items: flex-start;
-      padding: 24px 0; border-bottom: 1px solid var(--border);
-    }
-    .agenda-item:last-child { border-bottom: none; }
-    .agenda-num {
-      width: 36px; height: 36px; min-width: 36px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1));
-      border: 1px solid rgba(124,58,237,0.25);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      font-size: 14px; font-weight: 800; color: var(--violet-light); margin-top: 2px;
-    }
-    .agenda-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-    .agenda-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
-    .agenda-time { font-size: 11px; color: var(--text-dim); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-    /* REGISTRATION CARD */
-    .reg-section { padding: 80px 40px; }
-    .reg-card {
-      max-width: 560px; margin: 0 auto;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border-bright);
-      border-radius: 24px; padding: 52px 48px;
-      box-shadow: 0 0 100px rgba(124,58,237,0.08), inset 0 1px 0 rgba(255,255,255,0.04);
-      text-align: center;
-    }
-    .reg-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--cyan)); color: white; padding: 4px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
-    .reg-card h2 { font-size: 26px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
-    .reg-card .sub { font-size: 15px; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6; }
-    form { display: flex; flex-direction: column; gap: 14px; }
-    input[type="text"], input[type="email"] {
-      width: 100%; padding: 14px 18px;
-      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-      border-radius: 10px; color: var(--text); font-size: 15px; font-family: inherit;
-      outline: none; transition: border-color 0.2s, box-shadow 0.2s; text-align: left;
-    }
-    input::placeholder { color: var(--text-dim); }
-    input:focus { border-color: rgba(124,58,237,0.5); box-shadow: 0 0 0 3px rgba(124,58,237,0.1); }
-    .btn-register {
-      width: 100%; padding: 16px;
-      background: linear-gradient(135deg, var(--primary), #5b21b6);
-      color: white; border: none; border-radius: 10px;
-      font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      box-shadow: 0 0 40px var(--primary-glow), inset 0 1px 0 rgba(255,255,255,0.1);
-      transition: all 0.2s;
-    }
-    .btn-register:hover { transform: translateY(-1px); box-shadow: 0 0 60px var(--primary-glow); }
-    .reg-note { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
-    .reg-note span { color: var(--green); }
+    .hero{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:80px 40px 60px;text-align:center}
+    .hero-layer{position:absolute;inset:0;pointer-events:none;will-change:transform}
+    .hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,0.12),transparent 70%);top:-200px;left:50%;transform:translateX(-50%)}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.25);color:var(--violet);padding:6px 18px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px;font-family:'Inter',sans-serif}
+    .badge::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;box-shadow:0 0 8px var(--orange);animation:blink 2s infinite}
+    h1{font-size:clamp(36px,6vw,68px);font-weight:900;letter-spacing:-2.5px;line-height:1;margin-bottom:20px;position:relative;z-index:2}
+    .grad-v{background:linear-gradient(90deg,var(--violet),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:18px;color:var(--muted);max-width:580px;margin:0 auto 40px;line-height:1.7;font-family:'Inter',sans-serif}
+
+    /* DATE ROW */
+    .date-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:48px;position:relative;z-index:2}
+    .date-pill{display:flex;flex-direction:column;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 24px;min-width:140px}
+    .dp-label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;font-family:'Inter',sans-serif;margin-bottom:6px}
+    .dp-val{font-size:16px;font-weight:700;letter-spacing:-0.3px}
+    .dp-val.violet{color:var(--violet)}
+
     /* COUNTDOWN */
-    .countdown { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; }
-    .cd-block { text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; min-width: 64px; }
-    .cd-block .cd-num { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: var(--violet-light); line-height: 1; }
-    .cd-block .cd-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
-    /* SUCCESS */
-    .success { display: none; text-align: center; padding: 20px 0; }
-    .success-icon { font-size: 52px; margin-bottom: 16px; }
-    .success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-    .success p { font-size: 15px; color: var(--text-muted); }
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--text-dim); line-height: 1.8; }
-    footer a { color: var(--primary); text-decoration: none; }
-    /* FADE */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .countdown-wrap{display:flex;justify-content:center;gap:10px;margin-bottom:48px;position:relative;z-index:2}
+    .cd{background:var(--surface);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 18px;min-width:70px;text-align:center}
+    .cd-num{font-size:32px;font-weight:900;letter-spacing:-1.5px;color:var(--violet);line-height:1}
+    .cd-label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif;margin-top:4px}
+
+    /* SPEAKER */
+    .speaker-section{position:relative;z-index:1;max-width:900px;margin:0 auto;padding:0 40px 80px}
+    .speaker-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;display:flex;gap:32px;align-items:center}
+    .avatar{width:100px;height:100px;min-width:100px;border-radius:50%;background:linear-gradient(135deg,rgba(167,139,250,0.3),rgba(0,212,255,0.2));border:2px solid rgba(167,139,250,0.3);display:flex;align-items:center;justify-content:center;font-size:44px}
+    .sp-name{font-size:22px;font-weight:900;letter-spacing:-0.5px;margin-bottom:4px}
+    .sp-title{font-size:13px;color:var(--violet);font-weight:700;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:12px;font-family:'Inter',sans-serif}
+    .sp-bio{font-size:14px;color:var(--muted);line-height:1.7;font-family:'Inter',sans-serif}
+    .sp-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .chip{background:rgba(167,139,250,0.08);border:1px solid rgba(167,139,250,0.2);color:var(--violet);padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;font-family:'Inter',sans-serif}
+
+    /* AGENDA */
+    .agenda-section{position:relative;z-index:1;padding:80px 40px;background:linear-gradient(180deg,transparent,rgba(167,139,250,0.04),transparent)}
+    .agenda-inner{max-width:760px;margin:0 auto}
+    .tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:16px;font-family:'Inter',sans-serif}
+    .section-h{font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:12px}
+    .section-sub{font-size:16px;color:var(--muted);margin-bottom:40px;font-family:'Inter',sans-serif;line-height:1.7}
+    .agenda-list{display:flex;flex-direction:column}
+    .ag-item{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid var(--border)}
+    .ag-item:last-child{border-bottom:none}
+    .ag-num{width:38px;height:38px;min-width:38px;background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--violet);margin-top:2px}
+    .ag-body h3{font-size:16px;font-weight:700;margin-bottom:6px}
+    .ag-body p{font-size:14px;color:var(--muted);line-height:1.6;font-family:'Inter',sans-serif}
+    .ag-time{font-size:10px;color:var(--dim);margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif}
+
+    /* REG SECTION */
+    .reg-section{position:relative;z-index:1;padding:80px 40px}
+    .reg-card{max-width:540px;margin:0 auto;background:rgba(255,255,255,0.03);border:1px solid rgba(167,139,250,0.25);border-radius:24px;padding:52px 48px;text-align:center;box-shadow:0 0 100px rgba(167,139,250,0.07),inset 0 1px 0 rgba(255,255,255,0.04)}
+    .reg-badge{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(90deg,var(--violet),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px;display:block;font-family:'Inter',sans-serif}
+    .reg-card h2{font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}
+    .reg-sub{font-size:15px;color:var(--muted);margin-bottom:32px;line-height:1.6;font-family:'Inter',sans-serif}
+    form{display:flex;flex-direction:column;gap:12px}
+    input[type=text],input[type=email]{width:100%;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+    input::placeholder{color:var(--dim)}
+    input:focus{border-color:rgba(167,139,250,0.4);box-shadow:0 0 0 3px rgba(167,139,250,0.08)}
+    .btn-reg{width:100%;padding:16px;background:#fff;color:#080812;border:none;border-radius:100px;font-size:15px;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s}
+    .btn-reg:hover{background:var(--violet);color:#fff;transform:translateY(-1px);box-shadow:0 10px 30px rgba(167,139,250,0.2)}
+    .reg-note{font-size:11px;color:var(--dim);margin-top:8px;font-family:'Inter',sans-serif;letter-spacing:0.3px}
+    .reg-note span{color:var(--green)}
+    .success{display:none;text-align:center;padding:20px 0}
+    .success-icon{font-size:52px;margin-bottom:16px}
+    .success h3{font-size:24px;font-weight:900;margin-bottom:8px}
+    .success p{font-size:14px;color:var(--muted);font-family:'Inter',sans-serif}
+
+    footer{border-top:1px solid var(--border);padding:36px 40px;text-align:center;font-size:12px;color:var(--dim);line-height:1.9;position:relative;z-index:1;font-family:'Inter',sans-serif}
+    footer a{color:var(--violet);text-decoration:none}
+
+    .fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
+    .tilt-card{transform-style:preserve-3d}
+
     @media(max-width:768px){
-      .hero { padding: 60px 20px 40px; }
-      .speaker-section { padding: 0 20px 60px; }
-      .speaker-card { flex-direction: column; gap: 20px; padding: 28px; }
-      .agenda-section { padding: 60px 20px; }
-      .reg-section { padding: 60px 20px; }
-      .reg-card { padding: 36px 24px; }
-      .date-badge { flex-direction: column; gap: 8px; }
-      .date-badge .sep { width: 100%; height: 1px; }
+      nav{padding:16px 20px}
+      .hero{padding:60px 20px 40px}
+      .speaker-section{padding:0 20px 60px}
+      .speaker-card{flex-direction:column;gap:20px;padding:28px}
+      .agenda-section{padding:60px 20px}
+      .reg-section{padding:60px 20px}
+      .reg-card{padding:36px 24px}
+      .date-row{gap:8px}
     }
   </style>
 </head>
 <body>
+<canvas id="c"></canvas>
 
-<!-- URGENCY BAR -->
-<div class="urgency-bar">
-  🔴 Cupos limitados — cierre de registro en <span class="timer" id="urgency-timer">cargando...</span>
+<div class="urgency">
+  <div class="dot"></div>
+  Cupos limitados — registro cierra en <span class="timer" id="urgency-timer">--:--:--</span>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">Webinar Gratuito · En vivo + Replay</div>
-  <h1>Cómo operar a tu<br><span class="grad-v">máximo nivel cognitivo</span><br>en 90 días</h1>
-  <p class="hero-sub">El sistema exacto que usé para mejorar mi HRV 58% y sostener foco durante reuniones de 4+ horas — documentado con datos de wearable.</p>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">N</div>
+    NOOCUBE <span class="slash">//</span> LIVE
+  </div>
+  <a href="#registro" class="nav-cta">RESERVAR LUGAR</a>
+</nav>
 
-  <div class="date-badge">
-    <div class="date-block">
-      <div class="date-label">Próxima sesión</div>
-      <div class="date-val" id="webinar-date">Cargando...</div>
-    </div>
-    <div class="sep"></div>
-    <div class="date-block">
-      <div class="date-label">Horario</div>
-      <div class="date-val">7:00pm CDMX / 8:00pm COL-PER</div>
-    </div>
-    <div class="sep"></div>
-    <div class="date-block">
-      <div class="date-label">Duración</div>
-      <div class="date-val">~75 minutos</div>
-    </div>
+<div class="hero">
+  <div class="hero-layer" id="layer1"><div class="hero-glow"></div></div>
+  <div class="badge">WEBINAR GRATUITO // EN VIVO + REPLAY</div>
+  <h1>Máximo rendimiento<br><span class="grad-v">cognitivo en 90 días.</span></h1>
+  <p class="hero-sub">El sistema exacto — con HRV +58%, documentado en Oura Ring — para operar al tope durante reuniones de 4+ horas sin cafeína extra.</p>
+
+  <div class="date-row" id="date-row">
+    <div class="date-pill"><div class="dp-label">PRÓXIMA SESIÓN</div><div class="dp-val violet" id="webinar-date">Cargando...</div></div>
+    <div class="date-pill"><div class="dp-label">HORARIO</div><div class="dp-val">7pm CDMX / 8pm COL</div></div>
+    <div class="date-pill"><div class="dp-label">DURACIÓN</div><div class="dp-val">~75 min</div></div>
+  </div>
+
+  <div class="countdown-wrap">
+    <div class="cd"><div class="cd-num" id="cd-d">--</div><div class="cd-label">Días</div></div>
+    <div class="cd"><div class="cd-num" id="cd-h">--</div><div class="cd-label">Horas</div></div>
+    <div class="cd"><div class="cd-num" id="cd-m">--</div><div class="cd-label">Min</div></div>
+    <div class="cd"><div class="cd-num" id="cd-s">--</div><div class="cd-label">Seg</div></div>
   </div>
 </div>
 
-<!-- SPEAKER -->
-<div class="speaker-section fade-in">
-  <div class="speaker-card">
-    <div class="speaker-avatar">🧠</div>
-    <div class="speaker-body">
-      <div class="speaker-name">Sergio — Biohacking Ejecutivo</div>
-      <div class="speaker-title">CEO · Biohacker · Oura Ring User desde 2022</div>
-      <p class="speaker-bio">Pasé de tener HRV de 31ms y energía cero a las 3pm, a operar consistentemente con HRV de 49ms y foco sostenido durante 8 horas. En este webinar comparto el sistema exacto — sin venderles un estilo de vida de $10k/mes.</p>
-      <div class="speaker-chips">
+<div class="speaker-section fade-up">
+  <div class="speaker-card tilt-card">
+    <div class="avatar">🧠</div>
+    <div>
+      <div class="sp-name">Sergio — Biohacking Ejecutivo</div>
+      <div class="sp-title">CEO // BIOHACKER // OURA RING USER SINCE 2022</div>
+      <p class="sp-bio">Pasé de HRV 31ms y energía cero a las 3pm, a operar con HRV 49ms y foco sostenido 8 horas. En este webinar comparto el sistema exacto — sin venderles un estilo de vida de $10k/mes.</p>
+      <div class="sp-chips">
         <span class="chip">Oura Ring Gen 3</span>
         <span class="chip">WHOOP 4.0</span>
         <span class="chip">90 días documentados</span>
@@ -213,70 +165,30 @@
   </div>
 </div>
 
-<!-- AGENDA -->
 <div class="agenda-section">
-  <div class="agenda-inner fade-in">
-    <div class="section-tag">Agenda · 4 bloques</div>
-    <h2 class="section-title">Qué cubrimos en 75 minutos.</h2>
-    <p class="section-sub">Sin relleno. Sin venta de sueños. Solo el protocolo con los datos detrás.</p>
-
+  <div class="agenda-inner fade-up">
+    <div class="tag">AGENDA // 4 BLOCKS</div>
+    <h2 class="section-h">75 minutos. Sin relleno.</h2>
+    <p class="section-sub">Solo el protocolo con los datos detrás.</p>
     <div class="agenda-list">
-      <div class="agenda-item">
-        <div class="agenda-num">01</div>
-        <div class="agenda-body">
-          <h3>Por qué tu cerebro falla a las 3pm (y no es falta de café)</h3>
-          <p>La neurociencia del agotamiento ejecutivo. Por qué más cafeína hace el problema peor. Qué dice tu HRV sobre tu estado real.</p>
-          <div class="agenda-time">Min 0–15</div>
-        </div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-num">02</div>
-        <div class="agenda-body">
-          <h3>El stack de nootrópicos que sí funciona (y cuál evitar)</h3>
-          <p>Bacopa, L-Theanine, Alpha GPC — dosis reales, estudios reales. Qué ingredientes tienen evidencia clínica vs. cuáles son marketing.</p>
-          <div class="agenda-time">Min 15–35</div>
-        </div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-num">03</div>
-        <div class="agenda-body">
-          <h3>Mis 90 días documentados con Oura Ring — datos en vivo</h3>
-          <p>Pantalla de datos reales. Semana 1 vs. semana 12. Qué cambié, qué no cambié, y por qué el HRV es el mejor proxy de rendimiento cognitivo.</p>
-          <div class="agenda-time">Min 35–55</div>
-        </div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-num">04</div>
-        <div class="agenda-body">
-          <h3>El protocolo de 8 semanas — cómo implementarlo esta semana</h3>
-          <p>Guía paso a paso. Qué comprar, qué medir, cuándo esperar resultados. Sesión de preguntas y respuestas en vivo.</p>
-          <div class="agenda-time">Min 55–75</div>
-        </div>
-      </div>
+      <div class="ag-item"><div class="ag-num">01</div><div class="ag-body"><h3>Por qué tu cerebro falla a las 3pm (y no es falta de café)</h3><p>La neurociencia del agotamiento ejecutivo. Por qué más cafeína empeora el problema. Qué dice tu HRV sobre tu estado real.</p><div class="ag-time">Min 0–15</div></div></div>
+      <div class="ag-item"><div class="ag-num">02</div><div class="ag-body"><h3>El stack de nootrópicos que sí funciona — y cuál evitar</h3><p>Bacopa, L-Theanine, Alpha GPC — dosis reales, estudios reales. Qué ingredientes tienen evidencia clínica vs. cuáles son marketing puro.</p><div class="ag-time">Min 15–35</div></div></div>
+      <div class="ag-item"><div class="ag-num">03</div><div class="ag-body"><h3>Mis 90 días con Oura Ring — datos en pantalla en vivo</h3><p>Semana 1 vs. semana 12. Qué cambié, qué no cambié. Por qué el HRV es el mejor proxy de rendimiento cognitivo disponible hoy.</p><div class="ag-time">Min 35–55</div></div></div>
+      <div class="ag-item"><div class="ag-num">04</div><div class="ag-body"><h3>El protocolo de 8 semanas — implementación esta semana</h3><p>Guía paso a paso. Qué comprar, qué medir, cuándo esperar resultados. Sesión de preguntas y respuestas en vivo.</p><div class="ag-time">Min 55–75</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- REGISTRATION -->
-<div class="reg-section">
-  <div class="reg-card fade-in">
-    <div class="reg-badge">Registro gratuito · Cupos limitados</div>
-
-    <div class="countdown">
-      <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Días</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Horas</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Min</div></div>
-      <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seg</div></div>
-    </div>
-
+<div class="reg-section" id="registro">
+  <div class="reg-card fade-up tilt-card">
+    <span class="reg-badge">// REGISTRO GRATUITO · CUPOS LIMITADOS //</span>
     <h2>Reserva tu lugar ahora</h2>
-    <p class="sub">Sesión en vivo con preguntas. Si no puedes asistir en vivo, te enviamos el replay al día siguiente.</p>
-
+    <p class="reg-sub">Sesión en vivo con preguntas. Si no puedes asistir, te enviamos el replay al día siguiente.</p>
     <div id="reg-form-wrap">
       <form id="reg-form">
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="email" placeholder="tu@email.com" required>
-        <button type="submit" class="btn-register">
+        <button type="submit" class="btn-reg">
           Reservar mi Lugar Gratis
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
@@ -284,7 +196,7 @@
       </form>
       <div class="success" id="success-msg">
         <div class="success-icon">🎯</div>
-        <h3>¡Lugar reservado!</h3>
+        <h3>Lugar reservado</h3>
         <p>Revisa tu correo para el link de acceso. Llegarás directo a la sala el día del webinar.</p>
       </div>
     </div>
@@ -297,67 +209,45 @@
 </footer>
 
 <script>
-// Evergreen: webinar siempre 7 días adelante
-function getNextWebinar() {
-  const d = new Date();
-  d.setDate(d.getDate() + 7);
-  d.setHours(19, 0, 0, 0);
-  return d;
-}
+/* GRID BG */
+(function(){const c=document.getElementById('c'),ctx=c.getContext('2d');let W,H,mx=window.innerWidth/2,my=window.innerHeight/2;function r(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}r();window.addEventListener('resize',r);document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});function draw(){ctx.clearRect(0,0,W,H);const cw=W/35,ch=H/25,ox=(mx/W-0.5)*15,oy=(my/H-0.5)*10;ctx.strokeStyle='rgba(167,139,250,0.18)';ctx.lineWidth=0.5;for(let i=0;i<=35;i++){ctx.beginPath();ctx.moveTo(i*cw+ox*0.3,0);ctx.lineTo(i*cw+ox*0.3,H);ctx.stroke()}for(let j=0;j<=25;j++){ctx.beginPath();ctx.moveTo(0,j*ch+oy*0.3);ctx.lineTo(W,j*ch+oy*0.3);ctx.stroke()}}(function loop(){draw();requestAnimationFrame(loop)})()})();
 
-const target = getNextWebinar();
+/* PARALLAX */
+(function(){const l=document.getElementById('layer1');document.addEventListener('mousemove',e=>{const cx=window.innerWidth/2,cy=window.innerHeight/2,dx=(e.clientX-cx)/cx,dy=(e.clientY-cy)/cy;l.style.transform=`translate(${dx*25}px,${dy*18}px)`})})();
 
-// Mostrar fecha
-const opts = { weekday:'long', month:'long', day:'numeric' };
-document.getElementById('webinar-date').textContent =
-  target.toLocaleDateString('es-MX', opts).replace(/^\w/, c => c.toUpperCase());
-
-// Countdown
-function updateCountdown() {
-  const now = new Date();
-  const diff = target - now;
-  if (diff <= 0) { document.querySelector('.countdown').style.display = 'none'; return; }
-  const days = Math.floor(diff / 86400000);
-  const hours = Math.floor((diff % 86400000) / 3600000);
-  const mins = Math.floor((diff % 3600000) / 60000);
-  const secs = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-// Urgency timer (24h)
-function updateUrgency() {
-  const urgencyTarget = new Date(target);
-  urgencyTarget.setDate(urgencyTarget.getDate() - 6); // closes 1 day after
-  urgencyTarget.setHours(urgencyTarget.getHours() + 24);
-  const diff = urgencyTarget - new Date();
-  if (diff <= 0) { document.getElementById('urgency-timer').textContent = '¡CERRADO!'; return; }
-  const h = Math.floor(diff / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('urgency-timer').textContent =
-    `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-}
-updateUrgency();
-setInterval(updateUrgency, 1000);
-
-// Form
-document.getElementById('reg-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  this.style.display = 'none';
-  document.getElementById('success-msg').style.display = 'block';
-  setTimeout(() => { window.location.href = 'YOUR_AFFILIATE_LINK'; }, 3000);
+/* 3D TILT */
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;card.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateZ(4px)`});
+  card.addEventListener('mouseleave',()=>{card.style.transform='perspective(800px) rotateY(0) rotateX(0)';card.style.transition='transform 0.4s ease'});
+  card.addEventListener('mouseenter',()=>{card.style.transition='none'});
 });
 
-// Scroll fade-in
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+/* EVERGREEN COUNTDOWN */
+function getTarget(){const d=new Date();d.setDate(d.getDate()+7);d.setHours(19,0,0,0);return d}
+const target=getTarget();
+document.getElementById('webinar-date').textContent=target.toLocaleDateString('es-MX',{weekday:'long',month:'long',day:'numeric'}).replace(/^\w/,c=>c.toUpperCase());
+function tick(){
+  const diff=target-new Date();
+  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='00');return}
+  document.getElementById('cd-d').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0');
+  const ut=new Date(target);ut.setHours(ut.getHours()-24);const ud=ut-new Date();
+  if(ud>0){const h=Math.floor(ud/3600000),m=Math.floor(ud%3600000/60000),s=Math.floor(ud%60000/1000);document.getElementById('urgency-timer').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+  else{document.getElementById('urgency-timer').textContent='¡ÚLTIMO DÍA!'}
+}
+tick();setInterval(tick,1000);
+
+/* FORM */
+document.getElementById('reg-form').addEventListener('submit',function(e){
+  e.preventDefault();this.style.display='none';document.getElementById('success-msg').style.display='block';
+  setTimeout(()=>{window.location.href='YOUR_AFFILIATE_LINK'},3000);
+});
+
+/* FADE IN */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>

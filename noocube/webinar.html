@@ -4,297 +4,360 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Webinar Gratis — Cómo Operar a tu Máximo Nivel Cognitivo en 90 Días</title>
+  <title>Webinar Gratuito — Cómo Operar a tu Máximo Nivel Cognitivo en 90 Días</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
     :root {
-      --primary: #7c3aed;
-      --primary-dark: #5b21b6;
-      --bg: #0f172a;
-      --surface: #1e293b;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --success: #10b981;
-      --border: #334155;
-      --accent: #a78bfa;
+      --primary: #7c3aed; --primary-glow: rgba(124,58,237,0.4);
+      --violet-light: #a78bfa;
+      --cyan: #06b6d4; --green: #10b981; --orange: #f59e0b;
+      --bg: #0a0118; --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08); --border-bright: rgba(124,58,237,0.35);
+      --text: #f8fafc; --text-muted: #94a3b8; --text-dim: #64748b;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-
-    /* Urgency bar */
+    * { box-sizing: border-box; margin: 0; padding: 0; position: relative; z-index: 1; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden;
+    }
+    body::before {
+      content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at 30% -5%, rgba(124,58,237,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 80% 20%, rgba(6,182,212,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 50% at 20% 90%, rgba(124,58,237,0.07) 0%, transparent 50%);
+    }
+    /* URGENCY BAR */
     .urgency-bar {
-      background: var(--primary);
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 700;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2));
+      border-bottom: 1px solid var(--border-bright);
+      text-align: center; padding: 12px 20px;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.2px;
     }
-    .urgency-bar span { opacity: 0.85; font-weight: 400; margin-left: 8px; }
-
-    /* Hero */
-    .hero { max-width: 800px; margin: 0 auto; padding: 60px 20px 40px; text-align: center; }
-    .event-label {
-      display: inline-block;
-      background: rgba(124,58,237,0.2);
-      border: 1px solid var(--primary);
-      color: var(--accent);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
+    .urgency-bar .timer { color: var(--violet-light); font-weight: 800; font-size: 15px; }
+    /* HERO */
+    .hero { max-width: 900px; margin: 0 auto; padding: 80px 40px 60px; text-align: center; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.3);
+      color: var(--violet-light); padding: 6px 16px; border-radius: 100px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+      margin-bottom: 28px; animation: fadeUp 0.6s ease both;
     }
-    .hero h1 { font-size: clamp(26px, 5vw, 46px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
-    .hero h1 span { color: var(--accent); }
-    .hero p { font-size: 18px; color: var(--muted); margin-bottom: 32px; }
-    .event-meta { font-size: 15px; color: var(--text); margin-bottom: 36px; }
-    .event-meta strong { color: var(--accent); }
-
-    /* Form */
-    .reg-form {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px;
-      max-width: 460px;
-      margin: 0 auto;
+    .hero-eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 8px var(--orange); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+    .hero h1 { font-size: clamp(30px, 5vw, 58px); font-weight: 900; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; animation: fadeUp 0.6s 0.1s ease both; }
+    .grad-v { background: linear-gradient(135deg, #a78bfa, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-size: 18px; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both; }
+    /* DATE BADGE */
+    .date-badge {
+      display: inline-flex; align-items: center; gap: 16px;
+      background: var(--surface); border: 1px solid var(--border-bright);
+      border-radius: 12px; padding: 16px 28px; margin-bottom: 40px;
+      animation: fadeUp 0.6s 0.25s ease both;
     }
-    .reg-form h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; text-align: center; }
-    .form-group { margin-bottom: 12px; }
-    .form-group input {
-      width: 100%;
-      padding: 14px 16px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
-      font-size: 16px;
+    .date-badge .date-block { text-align: left; }
+    .date-badge .date-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+    .date-badge .date-val { font-size: 18px; font-weight: 800; letter-spacing: -0.5px; }
+    .date-badge .sep { width: 1px; height: 36px; background: var(--border); }
+    /* SPEAKER SECTION */
+    .speaker-section { max-width: 900px; margin: 0 auto; padding: 0 40px 80px; }
+    .speaker-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
+      padding: 40px; display: flex; gap: 32px; align-items: center;
     }
-    .submit-btn {
-      width: 100%;
-      background: var(--primary);
-      color: white;
-      padding: 16px;
-      border: none;
-      border-radius: 8px;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-      margin-top: 4px;
-    }
-    .submit-btn:hover { background: var(--primary-dark); }
-    .seats { font-size: 12px; color: var(--muted); text-align: center; margin-top: 10px; }
-    .privacy { font-size: 12px; color: var(--muted); text-align: center; margin-top: 8px; }
-
-    /* Countdown */
-    .countdown-section { text-align: center; padding: 48px 20px; }
-    .countdown-label { font-size: 14px; color: var(--muted); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-    .countdown { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .cd-box {
-      background: var(--surface);
-      border: 1px solid var(--primary);
-      border-radius: 12px;
-      padding: 20px 28px;
-      text-align: center;
-      min-width: 90px;
-    }
-    .cd-num { font-size: 44px; font-weight: 900; color: var(--text); display: block; line-height: 1; }
-    .cd-unit { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; display: block; }
-
-    /* Agenda */
-    .agenda { max-width: 700px; margin: 0 auto; padding: 0 20px 60px; }
-    .agenda h2 { font-size: 26px; font-weight: 800; text-align: center; margin-bottom: 32px; }
-    .agenda-item { display: flex; gap: 20px; margin-bottom: 24px; }
-    .agenda-time { font-size: 13px; font-weight: 700; color: var(--primary); min-width: 60px; padding-top: 2px; }
-    .agenda-content h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-    .agenda-content p { font-size: 14px; color: var(--muted); }
-
-    /* Speaker */
-    .speaker { max-width: 600px; margin: 0 auto; padding: 0 20px 60px; text-align: center; }
-    .speaker h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; }
     .speaker-avatar {
-      width: 80px; height: 80px;
-      background: var(--primary);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 32px; font-weight: 800;
-      margin: 0 auto 16px;
+      width: 100px; height: 100px; min-width: 100px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.3), rgba(6,182,212,0.2));
+      border: 2px solid rgba(124,58,237,0.3);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 44px;
     }
-    .speaker-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
-    .speaker-title { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
-    .speaker-bio { font-size: 15px; color: var(--muted); line-height: 1.7; }
-
-    footer { border-top: 1px solid var(--border); text-align: center; padding: 24px 20px; font-size: 12px; color: var(--muted); }
-    footer a { color: var(--primary); }
-    section { padding: 60px 20px; }
-    h2 { font-size: clamp(22px, 4vw, 32px); font-weight: 800; }
+    .speaker-name { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .speaker-title { font-size: 14px; color: var(--violet-light); font-weight: 600; margin-bottom: 12px; }
+    .speaker-bio { font-size: 15px; color: var(--text-muted); line-height: 1.7; }
+    .speaker-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .chip { background: rgba(124,58,237,0.1); border: 1px solid rgba(124,58,237,0.2); color: var(--violet-light); padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+    /* AGENDA */
+    .agenda-section { padding: 80px 40px; background: linear-gradient(180deg, transparent, rgba(124,58,237,0.04), transparent); }
+    .agenda-inner { max-width: 740px; margin: 0 auto; }
+    .section-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+    .section-title { font-size: clamp(26px,4vw,40px); font-weight: 800; letter-spacing: -1px; line-height: 1.1; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 40px; }
+    .agenda-list { display: flex; flex-direction: column; gap: 0; }
+    .agenda-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 24px 0; border-bottom: 1px solid var(--border);
+    }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-num {
+      width: 36px; height: 36px; min-width: 36px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(6,182,212,0.1));
+      border: 1px solid rgba(124,58,237,0.25);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 800; color: var(--violet-light); margin-top: 2px;
+    }
+    .agenda-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .agenda-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .agenda-time { font-size: 11px; color: var(--text-dim); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    /* REGISTRATION CARD */
+    .reg-section { padding: 80px 40px; }
+    .reg-card {
+      max-width: 560px; margin: 0 auto;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-bright);
+      border-radius: 24px; padding: 52px 48px;
+      box-shadow: 0 0 100px rgba(124,58,237,0.08), inset 0 1px 0 rgba(255,255,255,0.04);
+      text-align: center;
+    }
+    .reg-badge { display: inline-block; background: linear-gradient(135deg, var(--primary), var(--cyan)); color: white; padding: 4px 14px; border-radius: 100px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px; }
+    .reg-card h2 { font-size: 26px; font-weight: 800; letter-spacing: -1px; margin-bottom: 8px; }
+    .reg-card .sub { font-size: 15px; color: var(--text-muted); margin-bottom: 32px; line-height: 1.6; }
+    form { display: flex; flex-direction: column; gap: 14px; }
+    input[type="text"], input[type="email"] {
+      width: 100%; padding: 14px 18px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text); font-size: 15px; font-family: inherit;
+      outline: none; transition: border-color 0.2s, box-shadow 0.2s; text-align: left;
+    }
+    input::placeholder { color: var(--text-dim); }
+    input:focus { border-color: rgba(124,58,237,0.5); box-shadow: 0 0 0 3px rgba(124,58,237,0.1); }
+    .btn-register {
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--primary), #5b21b6);
+      color: white; border: none; border-radius: 10px;
+      font-size: 16px; font-weight: 700; font-family: inherit; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 0 40px var(--primary-glow), inset 0 1px 0 rgba(255,255,255,0.1);
+      transition: all 0.2s;
+    }
+    .btn-register:hover { transform: translateY(-1px); box-shadow: 0 0 60px var(--primary-glow); }
+    .reg-note { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
+    .reg-note span { color: var(--green); }
+    /* COUNTDOWN */
+    .countdown { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; }
+    .cd-block { text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; min-width: 64px; }
+    .cd-block .cd-num { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: var(--violet-light); line-height: 1; }
+    .cd-block .cd-label { font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+    /* SUCCESS */
+    .success { display: none; text-align: center; padding: 20px 0; }
+    .success-icon { font-size: 52px; margin-bottom: 16px; }
+    .success h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .success p { font-size: 15px; color: var(--text-muted); }
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--text-dim); line-height: 1.8; }
+    footer a { color: var(--primary); text-decoration: none; }
+    /* FADE */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    @media(max-width:768px){
+      .hero { padding: 60px 20px 40px; }
+      .speaker-section { padding: 0 20px 60px; }
+      .speaker-card { flex-direction: column; gap: 20px; padding: 28px; }
+      .agenda-section { padding: 60px 20px; }
+      .reg-section { padding: 60px 20px; }
+      .reg-card { padding: 36px 24px; }
+      .date-badge { flex-direction: column; gap: 8px; }
+      .date-badge .sep { width: 100%; height: 1px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- Urgency bar -->
+<!-- URGENCY BAR -->
 <div class="urgency-bar">
-  🎓 ENTRENAMIENTO GRATUITO — Solo 100 lugares disponibles
-  <span>Regístrate antes de que se llene →</span>
+  🔴 Cupos limitados — cierre de registro en <span class="timer" id="urgency-timer">cargando...</span>
 </div>
 
-<!-- Hero -->
+<!-- HERO -->
 <div class="hero">
-  <div class="event-label">🧠 Webinar Gratuito · Edición 2026</div>
-  <h1>Cómo Operar a tu <span>Máximo Nivel Cognitivo</span> en 90 Días (Sin Depender del Café)</h1>
-  <p>El protocolo exacto de biohacking que usé para subir mi HRV de 31ms a 49ms mientras dirigía una empresa — con datos reales de wearable.</p>
-  <div class="event-meta">
-    📅 <strong>Próxima sesión disponible en:</strong>
-  </div>
+  <div class="hero-eyebrow">Webinar Gratuito · En vivo + Replay</div>
+  <h1>Cómo operar a tu<br><span class="grad-v">máximo nivel cognitivo</span><br>en 90 días</h1>
+  <p class="hero-sub">El sistema exacto que usé para mejorar mi HRV 58% y sostener foco durante reuniones de 4+ horas — documentado con datos de wearable.</p>
 
-  <!-- Registration form -->
-  <div class="reg-form">
-    <h3>Reserva tu Lugar Gratis</h3>
-    <div class="form-group">
-      <input type="text" placeholder="Tu nombre" id="firstName">
+  <div class="date-badge">
+    <div class="date-block">
+      <div class="date-label">Próxima sesión</div>
+      <div class="date-val" id="webinar-date">Cargando...</div>
     </div>
-    <div class="form-group">
-      <input type="email" placeholder="Tu correo electrónico" id="email" required>
+    <div class="sep"></div>
+    <div class="date-block">
+      <div class="date-label">Horario</div>
+      <div class="date-val">7:00pm CDMX / 8:00pm COL-PER</div>
     </div>
-    <button class="submit-btn" onclick="handleRegister()">Reservar Mi Lugar Gratis →</button>
-    <p class="seats">🔴 Solo 100 lugares por sesión</p>
-    <p class="privacy">🔒 Sin spam. Cancelar cuando quieras.</p>
-  </div>
-</div>
-
-<!-- Countdown -->
-<div class="countdown-section">
-  <div class="countdown-label">El entrenamiento comienza en:</div>
-  <div class="countdown">
-    <div class="cd-box"><span class="cd-num" id="cd-days">07</span><span class="cd-unit">Días</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-hours">00</span><span class="cd-unit">Horas</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-minutes">00</span><span class="cd-unit">Min</span></div>
-    <div class="cd-box"><span class="cd-num" id="cd-seconds">00</span><span class="cd-unit">Seg</span></div>
-  </div>
-</div>
-
-<!-- What you'll learn -->
-<section style="max-width:700px; margin:0 auto;">
-  <h2 style="text-align:center; margin-bottom:32px;">Qué Aprenderás en Esta Sesión</h2>
-  <div style="display:grid; gap:16px;">
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;">
-      <strong>🔬 Por qué tu HRV predice tu rendimiento cognitivo</strong>
-      <p style="font-size:14px; color:var(--muted); margin-top:6px;">El número que mide tu wearable cada noche y que la mayoría de ejecutivos ignora — y cómo usarlo para tomar mejores decisiones.</p>
-    </div>
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;">
-      <strong>⚗️ El suplemento exacto que usé durante 90 días</strong>
-      <p style="font-size:14px; color:var(--muted); margin-top:6px;">Te digo el nombre, los ingredientes, la dosis y el protocolo exacto. Más un descuento exclusivo para asistentes del webinar (solo disponible 48h después del evento).</p>
-    </div>
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;">
-      <strong>📊 El protocolo de 90 días paso a paso</strong>
-      <p style="font-size:14px; color:var(--muted); margin-top:6px;">Semana a semana: qué esperar, qué medir, qué ajustar. Diseñado para ejecutivos con agenda de 60+ horas semanales.</p>
-    </div>
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:20px;">
-      <strong>✈️ Stack especial para viajeros frecuentes</strong>
-      <p style="font-size:14px; color:var(--muted); margin-top:6px;">Cómo mantener el protocolo con jet lag, cambios de zona horaria y hoteles. La variación del stack que uso cuando vuelo +10 veces al mes.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Agenda -->
-<div class="agenda">
-  <h2>Agenda del Entrenamiento</h2>
-  <div class="agenda-item">
-    <div class="agenda-time">0:00</div>
-    <div class="agenda-content">
-      <h4>El Problema Que Nadie Te Dijo</h4>
-      <p>Por qué el 80% de los ejecutivos opera con HRV crónicamente bajo — y cómo impacta en decisiones, liderazgo y resultados.</p>
-    </div>
-  </div>
-  <div class="agenda-item">
-    <div class="agenda-time">0:15</div>
-    <div class="agenda-content">
-      <h4>El Sistema de 90 Días</h4>
-      <p>Wearables + Nootrópicos + Protocolo de Sueño. Los 3 ejes del biohacking ejecutivo con datos reales.</p>
-    </div>
-  </div>
-  <div class="agenda-item">
-    <div class="agenda-time">0:35</div>
-    <div class="agenda-content">
-      <h4>El Nootrópico Exacto que Usé</h4>
-      <p>Nombre, ingredientes, dosis, efectos secundarios — todo con mis métricas de Oura Ring como evidencia. Más la oferta exclusiva para asistentes.</p>
-    </div>
-  </div>
-  <div class="agenda-item">
-    <div class="agenda-time">0:50</div>
-    <div class="agenda-content">
-      <h4>Q&A + Oferta Exclusiva</h4>
-      <p>Respondo preguntas en vivo y comparto el link de descuento exclusivo para asistentes — válido solo 48h después del webinar.</p>
+    <div class="sep"></div>
+    <div class="date-block">
+      <div class="date-label">Duración</div>
+      <div class="date-val">~75 minutos</div>
     </div>
   </div>
 </div>
 
-<!-- Speaker -->
-<div class="speaker">
-  <h2>Tu Anfitrión</h2>
-  <div class="speaker-avatar">BE</div>
-  <div class="speaker-name">El Equipo de BiohackingEjecutivo.com</div>
-  <div class="speaker-title">Biohacking para Ejecutivos Latinoamericanos · Desde 2024</div>
-  <p class="speaker-bio">Llevamos 2 años documentando experimentos de biohacking con datos reales de wearables en el contexto del ejecutivo latinoamericano. Nuestro experimento de 90 días con NooCube + Oura Ring es el único review en español con datos de HRV publicados. Hemos ayudado a más de 1,200 ejecutivos a optimizar su rendimiento cognitivo sin depender de estimulantes.</p>
+<!-- SPEAKER -->
+<div class="speaker-section fade-in">
+  <div class="speaker-card">
+    <div class="speaker-avatar">🧠</div>
+    <div class="speaker-body">
+      <div class="speaker-name">Sergio — Biohacking Ejecutivo</div>
+      <div class="speaker-title">CEO · Biohacker · Oura Ring User desde 2022</div>
+      <p class="speaker-bio">Pasé de tener HRV de 31ms y energía cero a las 3pm, a operar consistentemente con HRV de 49ms y foco sostenido durante 8 horas. En este webinar comparto el sistema exacto — sin venderles un estilo de vida de $10k/mes.</p>
+      <div class="speaker-chips">
+        <span class="chip">Oura Ring Gen 3</span>
+        <span class="chip">WHOOP 4.0</span>
+        <span class="chip">90 días documentados</span>
+        <span class="chip">Datos reales</span>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- Second form -->
-<section style="max-width:460px; margin:0 auto; padding-top:0;">
-  <div class="reg-form">
-    <h3>Sí, Quiero Asistir al Webinar Gratis</h3>
-    <div class="form-group">
-      <input type="text" placeholder="Tu nombre" id="firstName2">
+<!-- AGENDA -->
+<div class="agenda-section">
+  <div class="agenda-inner fade-in">
+    <div class="section-tag">Agenda · 4 bloques</div>
+    <h2 class="section-title">Qué cubrimos en 75 minutos.</h2>
+    <p class="section-sub">Sin relleno. Sin venta de sueños. Solo el protocolo con los datos detrás.</p>
+
+    <div class="agenda-list">
+      <div class="agenda-item">
+        <div class="agenda-num">01</div>
+        <div class="agenda-body">
+          <h3>Por qué tu cerebro falla a las 3pm (y no es falta de café)</h3>
+          <p>La neurociencia del agotamiento ejecutivo. Por qué más cafeína hace el problema peor. Qué dice tu HRV sobre tu estado real.</p>
+          <div class="agenda-time">Min 0–15</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">02</div>
+        <div class="agenda-body">
+          <h3>El stack de nootrópicos que sí funciona (y cuál evitar)</h3>
+          <p>Bacopa, L-Theanine, Alpha GPC — dosis reales, estudios reales. Qué ingredientes tienen evidencia clínica vs. cuáles son marketing.</p>
+          <div class="agenda-time">Min 15–35</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">03</div>
+        <div class="agenda-body">
+          <h3>Mis 90 días documentados con Oura Ring — datos en vivo</h3>
+          <p>Pantalla de datos reales. Semana 1 vs. semana 12. Qué cambié, qué no cambié, y por qué el HRV es el mejor proxy de rendimiento cognitivo.</p>
+          <div class="agenda-time">Min 35–55</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num">04</div>
+        <div class="agenda-body">
+          <h3>El protocolo de 8 semanas — cómo implementarlo esta semana</h3>
+          <p>Guía paso a paso. Qué comprar, qué medir, cuándo esperar resultados. Sesión de preguntas y respuestas en vivo.</p>
+          <div class="agenda-time">Min 55–75</div>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <input type="email" placeholder="Tu correo electrónico" id="email2" required>
-    </div>
-    <button class="submit-btn" onclick="handleRegister2()">Registrarme Ahora →</button>
-    <p class="privacy">🔒 Sin spam. Recibirás el link del webinar por email.</p>
   </div>
-</section>
+</div>
+
+<!-- REGISTRATION -->
+<div class="reg-section">
+  <div class="reg-card fade-in">
+    <div class="reg-badge">Registro gratuito · Cupos limitados</div>
+
+    <div class="countdown">
+      <div class="cd-block"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Días</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Horas</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Min</div></div>
+      <div class="cd-block"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Seg</div></div>
+    </div>
+
+    <h2>Reserva tu lugar ahora</h2>
+    <p class="sub">Sesión en vivo con preguntas. Si no puedes asistir en vivo, te enviamos el replay al día siguiente.</p>
+
+    <div id="reg-form-wrap">
+      <form id="reg-form">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="tu@email.com" required>
+        <button type="submit" class="btn-register">
+          Reservar mi Lugar Gratis
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="reg-note"><span>Totalmente gratuito</span> · Sin spam · Replay disponible</p>
+      </form>
+      <div class="success" id="success-msg">
+        <div class="success-icon">🎯</div>
+        <h3>¡Lugar reservado!</h3>
+        <p>Revisa tu correo para el link de acceso. Llegarás directo a la sala el día del webinar.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
-  <p>⚠️ Este entrenamiento puede hacer referencia a productos de afiliados. Si realizas una compra, podría recibir una comisión sin costo adicional para ti.</p>
-  <p style="margin-top:6px;"><a href="#">Política de Privacidad</a> · <a href="#">Términos</a></p>
-  <p style="margin-top:8px; font-size:11px;">Built with <a href="https://github.com/Affitor/affiliate-skills">Affiliate Skills</a> by Affitor</p>
+  © 2026 BiohackingEjecutivo.com · <a href="#">Privacidad</a> · <a href="#">Términos</a><br>
+  <span style="font-size:11px">Divulgación: Esta sesión incluye referencias a NooCube. El presentador es afiliado.</span>
 </footer>
 
 <script>
-  // Evergreen countdown — siempre 7 días adelante
-  function getEventDate() {
-    const now = new Date();
-    return new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000));
-  }
+// Evergreen: webinar siempre 7 días adelante
+function getNextWebinar() {
+  const d = new Date();
+  d.setDate(d.getDate() + 7);
+  d.setHours(19, 0, 0, 0);
+  return d;
+}
 
-  function updateCountdown() {
-    const diff = getEventDate() - new Date();
-    if (diff <= 0) return;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
+const target = getNextWebinar();
 
-  function handleRegister() {
-    const email = document.getElementById('email').value;
-    if (!email || !email.includes('@')) { alert('Por favor ingresa un correo válido.'); return; }
-    // TODO: POST a tu ESP (Mailchimp/ConvertKit/Beehiiv) con email + firstName
-    // Luego redirige a página de confirmación o affiliate link
-    window.location.href = 'YOUR_AFFILIATE_LINK';
-  }
+// Mostrar fecha
+const opts = { weekday:'long', month:'long', day:'numeric' };
+document.getElementById('webinar-date').textContent =
+  target.toLocaleDateString('es-MX', opts).replace(/^\w/, c => c.toUpperCase());
 
-  function handleRegister2() {
-    const email = document.getElementById('email2').value;
-    if (!email || !email.includes('@')) { alert('Por favor ingresa un correo válido.'); return; }
-    window.location.href = 'YOUR_AFFILIATE_LINK';
-  }
+// Countdown
+function updateCountdown() {
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) { document.querySelector('.countdown').style.display = 'none'; return; }
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins = Math.floor((diff % 3600000) / 60000);
+  const secs = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Urgency timer (24h)
+function updateUrgency() {
+  const urgencyTarget = new Date(target);
+  urgencyTarget.setDate(urgencyTarget.getDate() - 6); // closes 1 day after
+  urgencyTarget.setHours(urgencyTarget.getHours() + 24);
+  const diff = urgencyTarget - new Date();
+  if (diff <= 0) { document.getElementById('urgency-timer').textContent = '¡CERRADO!'; return; }
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('urgency-timer').textContent =
+    `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+updateUrgency();
+setInterval(updateUrgency, 1000);
+
+// Form
+document.getElementById('reg-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+  setTimeout(() => { window.location.href = 'YOUR_AFFILIATE_LINK'; }, 3000);
+});
+
+// Scroll fade-in
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
